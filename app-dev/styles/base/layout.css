@@ -2625,10 +2625,15 @@ article.message {
 		.row.fake-input-field .right,
 		.row.input-field      .right {
 			position: absolute;
-			right: 0.8rem;
 			top: 0;
 			width: auto;
 			margin-left: 0;
+		}
+		.row.fake-input-field .right {
+			right: 1.6rem;
+		}
+		.row.input-field      .right {
+			right: 0.8rem;
 		}
 		.row.select-field .left {
 			width: calc(100% - 1.8rem); /* for covering OS select control down arrow */
@@ -3557,7 +3562,7 @@ article.message {
 		}
 
 	.f-block-body .row.fake-input-field .input-tip.default,
-	/* .f-block-body .row.fake-input-field, */
+	.f-block-body .row.fake-input-field,
 	.f-block-body .row.select-field,
 	.f-block-body .row.input-field,
 	.f-block-body .row.tall {
