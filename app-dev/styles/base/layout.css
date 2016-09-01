@@ -2617,7 +2617,7 @@ article.message {
 		.row.fake-input-field .left,
 		.row.input-field      .left {
 			position: relative; /* for positioning of clear-input-button */
-			width: 75%;
+			width: 70%;
 			margin: 0;
 			padding-left: 0;
 			padding-right: 0;
