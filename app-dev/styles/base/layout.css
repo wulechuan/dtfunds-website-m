@@ -2495,6 +2495,10 @@ article.message {
 
 	.row.caption-bar {
 		}
+		.row.caption-bar .icon {
+			margin-left: 0;
+			margin-right: 0.25rem;
+		}
 		.row.caption-bar h1 {
 			font-size: 0.75rem;
 			font-weight: 400;
