@@ -4576,18 +4576,20 @@ dl.tickets-list {
 	.page-body {
 		box-sizing: border-box;
 		position: relative;
-		padding-bottom: 6rem;
 		overflow: auto;
 		-webkit-overflow-scrolling: touch;
 
 		z-index: 2;
 		}
-		.page-body.use-content-as-main-container {
-			padding-bottom: 0;
-		}
 		.page-body.use-content-as-main-container > .content-with-solid-bg {
 			box-sizing: border-box;
-			padding-bottom: 6rem;
+		}
+		.page-body.use-content-as-main-container > .content-with-solid-bg,
+		.page-body {
+			padding-bottom: 3rem;
+		}
+		.page-body.use-content-as-main-container {
+			padding-bottom: 0;
 		}
 		/* .page-body > .content-with-solid-bg {
 			position: relative;
@@ -4705,7 +4707,7 @@ dl.tickets-list {
 	.page-body-stamp {
 		width: 100%;
 		position: absolute;
-		bottom: 0.6rem;
+		bottom: 1rem;
 		text-align: center;
 		}
 
