@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1472712210'); /* IE9*/
-  src: url('iconfont.eot?t=1472712210#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1472712210') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1472712210') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1472712210#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1472716220'); /* IE9*/
+  src: url('iconfont.eot?t=1472716220#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1472716220') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1472716220') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1472716220#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -18,8 +18,6 @@
 .icon-triangle-narrow-downwards:before { content: "\e61f"; }
 .icon-plus-sign-circled:before { content: "\e60c"; }
 .icon-chevron-large-thin-up:before { content: "\e600"; }
-.icon-jinyuanbao001:before { content: "\e62e"; }
-.icon-jijin01:before { content: "\e62d"; }
 .icon-cross-45deg:before { content: "\e606"; }
 .icon-checked-mark:before { content: "\e605"; }
 .icon-info-tip-circled:before { content: "\e622"; }
