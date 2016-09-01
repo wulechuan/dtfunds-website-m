@@ -35,45 +35,48 @@
 		</div>
 	</header>
 
-	<div class="page-body">
-		<style type="text/css">
-			.filters-block.children-pinned {
-				height: 4rem;
-				}
-				.filters-block.children-pinned .pinned {
-					position: fixed;
-					left: 0;
-					right: 0;
-					margin: 0;
-					top: 2.4rem;
-					z-index: 10;
-					box-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
-				}
-		</style>
-		<div class="f-block snap-top large-gap filters-block children-pinned">
-			<div class="f-block-body pinned hide-borders">
-				<div class="row filters">
-					<h4 class="filters-label">股票</h4>
-					<ul class="f-list">
-						<li class="filter">混合</li>
-						<li class="filter">指数</li>
-						<li class="filter">QDII</li>
-						<li class="filter">债券</li>
-						<li class="filter">保本</li>
-						<li class="filter">理财</li>
-						<li class="filter">货币</li>
-					</ul>
-				</div>
-				<div class="row filters">
-					<h4 class="filters-label">全部</h4>
-					<ul class="f-list">
-						<li class="filter">低风险</li>
-						<li class="filter">中风险</li>
-						<li class="filter">高风险</li>
-					</ul>
-				</div>
+	<style type="text/css">
+		.filters-block.children-pinnable {
+			height: 4rem;
+			}
+			.filters-block.children-pinnable .pinnable {
+				position: fixed;
+				left: 0;
+				right: 0;
+				margin: 0;
+				top: 2.4rem;
+				z-index: 10;
+			}
+			.filters-block.children-pinnable.children-pinned .pinnable {
+				box-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
+			}
+	</style>
+	<div class="f-block snap-top large-gap filters-block children-pinnable">
+		<div class="f-block-body pinnable">
+			<div class="row filters">
+				<h4 class="filters-label">股票</h4>
+				<ul class="f-list">
+					<li class="filter">混合</li>
+					<li class="filter">指数</li>
+					<li class="filter">QDII</li>
+					<li class="filter">债券</li>
+					<li class="filter">保本</li>
+					<li class="filter">理财</li>
+					<li class="filter">货币</li>
+				</ul>
+			</div>
+			<div class="row filters">
+				<h4 class="filters-label">全部</h4>
+				<ul class="f-list">
+					<li class="filter">低风险</li>
+					<li class="filter">中风险</li>
+					<li class="filter">高风险</li>
+				</ul>
 			</div>
 		</div>
+	</div>
+
+	<div class="page-body">
 
 		<div class="fund-products-recommanded helvetica-digits">
 			<!-- <div class="f-block product-abstract">
@@ -85,7 +88,7 @@
 				</div>
 			</div> -->
 
-			<div class="f-block large-gap">
+			<div class="f-block snap-top large-gap">
 				<div class="f-block-body">
 					<div class="row">
 						<div class="entity-info entity-buyable entity-type-fund">
