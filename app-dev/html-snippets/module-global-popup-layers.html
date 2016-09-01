@@ -1,0 +1,318 @@
+<div class="popup-layers">
+	<div class="popup-layers-back-plate"></div>
+	<div class="popup-layers-container">
+		<div class="popup-layer polite-message" id="plpm-modification-succeeded">
+			<div class="popup-window">
+				<article><p>修改成功</p></article>
+			</div>
+		</div>
+
+		<div class="popup-layer polite-message" id="plpm-trading-password-verified">
+			<div class="popup-window">
+				<article><p>交易密码正确</p></article>
+			</div>
+		</div>
+
+		<!-- <div role="dialog" class="popup-layer" id="pl-taijs-service-contact">
+			<div class="popup-window has-dialog">
+				<div class="dialog has-header has-footer">
+					<header class="dialog-header"><h3>泰金所服务热线</h3></header>
+					<div class="dialog-body">
+						<div class="content">
+							<article class="message">
+								<p class="main">
+									泰金所服务热线<br>
+									<span class="phone">400-928-2299</span>
+								</p>
+							</article>
+						</div>
+					</div>
+					<footer class="dialog-footer">
+						<span class="col"><button button-action="cancel">取消</button></span>
+						<span class="col"><button class="promoted" button-action="confirm">呼叫</button></span>
+					</footer>
+				</div>
+			</div>
+		</div> -->
+
+		<div role="dialog" class="popup-layer" id="pl-product-terminated">
+			<div class="popup-window has-dialog">
+				<div class="dialog has-header has-footer">
+					<header class="dialog-header"><h3>温馨提示</h3></header>
+					<div class="dialog-body">
+						<div class="content">
+							<article class="message">
+								<p>
+									您投资的固收理财<br>
+									《泰靠谱001号》 《泰靠谱002号》已终止<br>
+									资金用于抵充您的泰有信账户欠款<br>
+									您可前往历史投资记录中查询
+								</p>
+							</article>
+						</div>
+					</div>
+					<footer class="dialog-footer">
+						<button button-action="cancel" class="promoted">朕知道了</button>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<div role="dialog" class="popup-layer" id="pl-trading-password-incorrect">
+			<div class="popup-window has-dialog">
+				<div class="dialog has-footer">
+					<div class="dialog-body">
+						<div class="content">
+							<article class="message">
+								<p class="main">
+									交易密码不正确，您还可以输入<span class="value password-retry-limitation">3</span>次
+								</p>
+							</article>
+						</div>
+					</div>
+					<footer class="dialog-footer">
+						<span class="col"><a role="button" href="account-trading-password-reset-step-1.html">忘记密码</a></span>
+						<span class="col"><button class="promoted" button-action="confirm">重新输入</button></span>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<div role="dialog" class="popup-layer" id="pl-trading-password-has-been-locked">
+			<div class="popup-window has-dialogr">
+				<div class="dialog has-foote">
+					<div class="dialog-body">
+						<div class="content">
+							<article class="message">
+								<p class="main">
+									交易密码已被锁定，建议找回密码
+								</p>
+							</article>
+						</div>
+					</div>
+					<footer class="dialog-footer">
+						<span class="col"><button class="promoted" button-action="cancel">取消</button></span>
+						<span class="col"><a role="button" href="account-trading-password-reset-step-1.html">找回密码</a></span>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<div role="dialog" class="popup-layer has-docked-panel" id="pl-password-input-panel-trading">
+			<div class="popup-panel bg-light-gray">
+				<header class="popup-panel-header">
+					<div class="row header-bar">
+						<div class="center"><h1>请输入交易密码</h1></div>
+						<div class="left"  ><button class="button-x at-leftside"></button></div>
+					</div>		
+				</header>
+				<div class="popup-panel-body">
+					<article class="content-align-center">
+						<p>实付金额<em><span class="value amount currency">2,000.00</span>元</em></p>
+					</article>
+					<form method="POST" id="form-submit-trading-password" name="tradingpassword"
+						action="#"></form>
+					<div class="row">
+						<div class="fixed-count-chars-input-block full-width input-is-password input-only-digits has-fake-caret"
+							data-chars-count="6">
+							<input type="tel" id="trading-password-input-in-panel">
+						</div>
+					</div>
+					<div class="row single-side-content">
+						<div class="right tip"
+							><a role="button" class="simple-look"
+							 href="account-trading-password-reset-step-1.html">忘记密码？</a
+						></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div role="dialog" class="popup-layer" id="pl-message-intro-ti-yan-jin" data-subject="体验金">
+			<div class="popup-window has-dialog">
+				<div class="dialog dialog-style-card message-card has-header has-footer">
+					<div class="deco"><div class="concave-pies pies-layout-hori"></div></div>
+					<header class="dialog-header">
+						<div class="hero-content-block">
+							<h3
+								><span class="hero-word value digits currency currency-prefix-rmb"
+									>58,888</span
+								><span class="minor">体验金</span
+							></h3>
+						</div>
+					</header>
+
+					<div class="dialog-body">
+						<div class="content">
+							<article>
+								<ul>
+									<li><p>该资金为体验固收产品购买流程的体验本金</p></li>
+									<li><p>体验产品的年化收益率6%，理财期限1天</p></li>
+									<li><p>体验理财产品到期后，预计收益金额将于1-5个工作日内发放至您的泰金宝账号</p></li>
+								</ul>
+							</article>
+						</div>
+					</div>
+
+					<footer class="dialog-footer">
+						<button class="button-x" button-action="cancel"></button>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<div role="dialog" class="popup-layer" id="pl-message-intro-di-yong-quan" data-subject="抵用券">
+			<div class="popup-window has-dialog">
+				<div class="dialog dialog-style-card message-card has-header has-footer">
+					<div class="deco"><div class="concave-pies pies-layout-hori"></div></div>
+					<header class="dialog-header">
+						<div class="hero-content-block">
+							<h3
+								><span class="hero-word value digits currency currency-prefix-rmb"
+									>100</span
+								><span class="minor">抵用券</span
+							></h3>
+						</div>
+					</header>
+
+					<div class="dialog-body">
+						<div class="content">
+							<article>
+								<ul>
+									<li><p>金额≥1000元，期限≥30天，可抵用投资本金；</p></li>
+									<li><p>每满1000元抵用10元，最高可抵用100元；</p></li>
+									<li><p>一张券只能抵用一次，抵用后作废。</p></li>
+								</ul>
+							</article>
+						</div>
+					</div>
+
+					<footer class="dialog-footer">
+						<button class="button-x" button-action="cancel"></button>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<div role="dialog" class="popup-layer" id="pl-message-intro-te-quan-ben-jin" data-subject="特权本金">
+			<div class="popup-window has-dialog">
+				<div class="dialog dialog-style-card message-card has-header has-footer">
+					<div class="deco"><div class="concave-pies pies-layout-hori"></div></div>
+					<header class="dialog-header">
+						<div class="hero-content-block">
+							<h3
+								><span class="hero-word value digits currency currency-prefix-rmb"
+									>1,000</span
+								><span class="minor">特权本金</span
+							></h3>
+						</div>
+					</header>
+
+					<div class="dialog-body">
+						<div class="content">
+							<article>
+								<ul>
+									<li><p>金额≥4000元，期限≥30天，此券可用；</p></li>
+									<li><p>本特权本金不可取现，其收益可提现；</p></li>
+									<li><p>一张券只能抵用一次，抵用后作废。</p></li>
+								</ul>
+							</article>
+						</div>
+					</div>
+
+					<footer class="dialog-footer">
+						<button class="button-x" button-action="cancel"></button>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<div role="dialog" class="popup-layer" id="pl-message-intro-jia-xi-quan" data-subject="加息券">
+			<div class="popup-window has-dialog">
+				<div class="dialog dialog-style-card message-card has-header has-footer">
+					<div class="deco"><div class="concave-pies pies-layout-hori"></div></div>
+					<header class="dialog-header">
+						<div class="hero-content-block">
+							<h3
+								><span class="hero-word value digits percentage-value"
+									>+0.5</span
+								><span class="minor">加息券</span
+							></h3>
+						</div>
+					</header>
+
+					<div class="dialog-body">
+						<div class="content">
+							<article>
+								<ul>
+									<li><p>金额≥1000元，期限≥30天，此券可用；</p></li>
+									<li><p>此券可享受7天加息收益；</p></li>
+									<li><p>一张券只能抵用一次，抵用后作废。</p></li>
+								</ul>
+							</article>
+						</div>
+					</div>
+
+					<footer class="dialog-footer">
+						<button class="button-x" button-action="cancel"></button>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<div role="dialog" class="popup-layer" id="pl-message-intro-hong-bao" data-subject="红包">
+			<div class="popup-window has-dialog">
+				<div class="dialog dialog-style-card message-card has-header has-footer">
+					<div class="deco"><div class="concave-pies pies-layout-hori"></div></div>
+					<header class="dialog-header">
+						<div class="hero-content-block">
+							<h3
+								><span class="hero-word value digits currency currency-prefix-rmb"
+									>5</span
+								><span class="minor">红包</span
+							></h3>
+						</div>
+					</header>
+
+					<div class="dialog-body">
+						<div class="content">
+							<article>
+								<p>领取后，下个自然月的前7个工作日内发放至您的泰金宝账户。</p>
+							</article>
+						</div>
+					</div>
+
+					<footer class="dialog-footer">
+						<button class="button-x" button-action="cancel"></button>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<div role="dialog" class="popup-layer" id="pl-message-credit-limitation-introduction">
+			<div class="popup-window has-dialog full-screen">
+				<div class="dialog dialog-style-card has-header has-footer">
+					<header class="dialog-header">
+					</header>
+					<div class="dialog-body">
+						<div class="content">
+							<article>
+								<div class="subject-symbol">
+									<div class="icon iconfont icon-wallet-circled" style="color: #f60;"></div>
+								</div>
+								<h2>额度说明</h2>
+								<hr>
+								<p>泰有信的额度可用于在泰金所及泰金所合作的平台购物，泰有信额度是在泰金所投资固收产品额度的XX%，额度可累加。固收投资交易成功后，额度即可生效。</p>
+								<p><a href="#" class="call-to-action">如何使用</a></p>
+							</article>
+						</div>
+					</div>
+					<footer class="dialog-footer">
+						<button class="button-x" button-action="cancel"></button>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
