@@ -288,23 +288,11 @@
 		background-position: right center;
 		}
 
-
-		.banner .carousel .carousel-slides > li:nth-child(1) > .content article {
-			font-family: 'Microsoft Yahei UI';
-			font-size: 0.65rem;
-			line-height: 1.33;
-			color: black;
-			font-weight: normal;
+	@media only screen and (max-width: 345px) { /* iPhone 4/4S/5/5S/SE */
+		.banner .carousel .carousel-slides > li .carousel-bg {
+			background-position: 110% center;
 		}
-		.banner .carousel .carousel-slides > li:nth-child(1) > .content article h1 {
-			font-size: 1rem;
-			line-height: 1;
-			font-weight: bolder;
-			margin-left: -0.3em;
-		}
-		.banner .carousel .carousel-slides > li:nth-child(1) > .content article h1 em {
-			color: #fc272b;
-		}
+	}
 
 
 .promotion-bar {
