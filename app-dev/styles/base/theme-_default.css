@@ -1281,7 +1281,7 @@ dl.tickets-list {
 		background-image: url(../../images/_common/page-header-bg-extended-small-dtfunds.jpg);
 	}
 	.page.has-header-bg::after {
-		background-image: linear-gradient(to bottom, rgba(62, 90, 215, 0) 14rem, #f1f1f1 26rem);
+		background-image: linear-gradient(to bottom, #e39f3d 14rem, #f1f1f1 26rem);
 	}
 	.page-header .search-block,
 	.page-header {
@@ -1319,7 +1319,7 @@ dl.tickets-list {
 
 	.page::before,
 	.page.has-header-bg .page-header {
-		background-color: rgb(62, 90, 215);
+		background-color: #e39f3d;
 	}
 
 
