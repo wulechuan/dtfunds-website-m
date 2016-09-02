@@ -1,5 +1,5 @@
 var pathSrcRoot          = 'app-dev';
-var pathDistRoot         = 'app-dist';
+var pathDistRoot         = 'app-dist1';
 var pathNewDistCacheRoot = 'app-dist-cache';
 var pathTempRoot         = '_temp';
 
