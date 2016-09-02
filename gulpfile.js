@@ -1,5 +1,5 @@
 var pathSrcRoot          = 'app-dev';
-var pathDistRoot         = 'app-dist';
+var pathDistRoot         = 'app-dist1';
 var pathNewDistCacheRoot = 'app-dist-cache';
 var pathTempRoot         = '_temp';
 
@@ -484,9 +484,11 @@ gulp.task('default', [
 
 gulp.task('del', () => {
   try {
+    fileSystem.unlinkSync(pathNewDistCacheRoot);
+    fileSystem.unlinkSync(pathTempRoot);
     fileSystem.unlinkSync(pathDistRoot);
   } catch (e) {
-    console.log('using del...');
+    console.log('           >>>>>>>> unlinkSync failed >>>>>>>> using del...');
     del([
       pathNewDistCacheRoot,
       pathTempRoot,

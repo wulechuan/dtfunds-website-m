@@ -2470,6 +2470,7 @@ article.message {
 	.row.caption-bar {
 		}
 		.row.caption-bar .icon {
+			margin-top: 0.1rem;
 			margin-left: 0;
 			margin-right: 0.25rem;
 		}
@@ -3010,15 +3011,57 @@ article.message {
 			height: 20rem;
 		}
 	}
+
+	.chart-block div:last-child {
+		width: 0;
+		height: 0;
+		background-color: red!important;
+		border-radius: 0!important;
+		overflow: visible!important;
+	}
+	/* .chart-block div:last-child::before,
+	.chart-block div:last-child::after {
+		content: '';
+		position: absolute;
+		background-color: red;
+		z-index: 2;
+	}
+	.chart-block div:last-child::before {
+		width: 2px;
+		height: 10px;
+		left: -1px;
+		top: -10px;
+	}
+	.chart-block div:last-child::after {
+		width: 10px;
+		height: 1px;
+		left: -5px;
+		top: 0px;
+	} */
+
 	.chart-block .echart-tooltip {
+		position: absolute;
+		left: 0;
+		top: 0;
 		margin: 0;
 		padding: 0.25rem 0.5rem;
 		border-radius: 0.2rem;
+		-webkit-transform: translate(-50%, -100%) translate(0.5px, 0);
+		        transform: translate(-50%, -100%) translate(0.5px, 0);
+	}
+	.chart-block .echart-tooltip.has-border-triangle {
+		-webkit-transform: translate(-50%, -100%) translate(0.5px, -5px);
+		        transform: translate(-50%, -100%) translate(0.5px, -5px);
+	}
+	.chart-block .echart-tooltip.testing {
+		width: 0;
+		height: 0;
+		padding: 0;
+		overflow: hidden;
 	}
 	.chart-block .echart-tooltip .f-list .label,
 	.chart-block .echart-tooltip .f-list .value {
 		display: inline-block;
-		/* vertical-align: middle; */
 		font-size: 0.6rem;
 		line-height: 1.2;
 	}

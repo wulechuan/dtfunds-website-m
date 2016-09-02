@@ -38,7 +38,7 @@ html {
 	}
 	.color-inverted .sensitive-value-replacement {
 		color: white;
-		background-color: #e39f3d;
+		background-color: #cca25d;
 	}
 
 
@@ -48,7 +48,7 @@ html {
 
 
 a, a:visited {
-	color: #e39f3d;
+	color: #cca25d;
 	}
 	.row.menu-item:active,
 	.row.interactive:active,
@@ -74,7 +74,7 @@ em {
 		text-shadow: 0 0 0.5px #ff4200;
 	}
 	strong {
-		color: #e39f3d;
+		color: #cca25d;
 	}
 
 
@@ -105,7 +105,7 @@ em {
 			color: #00bb4b!important;
 		}
 		.color-promoted {
-			color: #e39f3d;
+			color: #cca25d;
 		}
 
 		.minor-content,
@@ -116,7 +116,7 @@ em {
 
 .color-inverted {
 	color: white;
-	background-color: #e39f3d;
+	background-color: #cca25d;
 	}
 	.color-inverted.row  *,
 	.color-inverted .row *,
@@ -138,7 +138,7 @@ input {
 	option:hover,
 	input:hover,
 	label:hover {
-		border-color: #e39f3d;
+		border-color: #cca25d;
 	}
 
 	select:active,
@@ -147,7 +147,7 @@ input {
 	input:focus,
 	label:active,
 	label:focus {
-		border-color: #e39f3d;
+		border-color: #cca25d;
 	}
 
 	input[type="button"],
@@ -157,8 +157,8 @@ input {
 	[role="button"],
 	button {
 		color: white;
-		border-color: #e39f3d;
-		background-color: #e39f3d;
+		border-color: #cca25d;
+		background-color: #cca25d;
 	}
 
 	input[type="button"]:hover,
@@ -210,7 +210,7 @@ input {
 	a[role="button"].color-white,
 	[role="button"].color-white,
 	button.color-white {
-	    color: #e39f3d;
+	    color: #cca25d;
 	    border-color: white;
 	    background-color: white;
 	}
@@ -221,7 +221,7 @@ input {
 	.color-inverted a[role="button"],
 	.color-inverted [role="button"],
 	.color-inverted button {
-	    color: #e39f3d;
+	    color: #cca25d;
 	    border-color: white;
 	    background-color: white;
 	}
@@ -232,7 +232,7 @@ input {
 	a[role="button"].bg-transparent,
 	[role="button"].bg-transparent,
 	button.bg-transparent {
-		color: #e39f3d;
+		color: #cca25d;
 		background-color: transparent;
 	}
 
@@ -318,7 +318,7 @@ input {
 	.dialog-footer a[role="button"][button-action="confirm"],
 	.dialog-footer [role="button"][button-action="confirm"],
 	.dialog-footer button[button-action="confirm"] {
-		color: #e39f3d;
+		color: #cca25d;
 	}
 
 	.page-body-stamp input[type="button"]:hover,
@@ -355,7 +355,7 @@ input {
 	a[role="button"].simple-look,
 	[role="button"].simple-look,
 	button.simple-look {
-		color: #e39f3d;
+		color: #cca25d;
 	}
 
 	input[type="reset"].simple-look:hover .iconfont,
@@ -370,7 +370,7 @@ input {
 	[role="button"].simple-look:hover,
 	button.simple-look:hover .iconfont,
 	button.simple-look:hover {
-		color: #e39f3d;
+		color: #cca25d;
 		/* background-color: #e5f1ff; */
 	}
 
@@ -401,8 +401,8 @@ input {
 		.pagination [role="button"].page-number.current,
 		.pagination button.page-number.current {
 			color: white;
-			border-color: #e39f3d;
-			background-color: #e39f3d;
+			border-color: #cca25d;
+			background-color: #cca25d;
 		}
 		.pagination [role="button"].current:hover,
 		.pagination button.current:hover {
@@ -413,7 +413,7 @@ input {
 	a[role="button"]:focus,
 	button:active,
 	button:focus {
-		outline-color: #e39f3d;
+		outline-color: #cca25d;
 	}
 
 
@@ -459,10 +459,10 @@ label.deco-input {
 				color: #333;
 			}
 			input[type="radio"]:checked + label.deco-input[for]::before {
-				border-color: #e39f3d;
+				border-color: #cca25d;
 			}
 			input[type="radio"]:checked + label.deco-input[for]::after {
-				background-color: #e39f3d;
+				background-color: #cca25d;
 			}
 
 
@@ -474,10 +474,10 @@ label.deco-input {
 				border-color: #333;
 			} */
 			input[type="checkbox"]:checked + label.deco-input[for]::before {
-				border-color: #e39f3d;
+				border-color: #cca25d;
 			}
 			input[type="checkbox"]:checked + label.deco-input[for]::after {
-				color: #e39f3d;
+				color: #cca25d;
 			}
 
 
@@ -611,12 +611,12 @@ label.deco-input {
 	.progress-stops[data-progress-current-stop="1"]           > li:first-child,
 	.progress-stops .progress-stop.current-stop,
 	.progress-stops           > li.current-stop {
-		color: #e39f3d;
+		color: #cca25d;
 	}
 
 	.progress-stops .progress-stop.past-step,
 	.progress-stops           > li.past-step {
-		color: #e39f3d;
+		color: #cca25d;
 	}
 
 	/* all past nodes: begin */
@@ -696,9 +696,9 @@ label.deco-input {
 		.progress-stops[data-progress-current-stop="2"]           > li:nth-child(2),
 		.progress-stops[data-progress-current-stop="2"] .progress-stop:first-child,
 		.progress-stops[data-progress-current-stop="2"]           > li:first-child {
-			color: #e39f3d;
-			/* border-color: #e39f3d; */
-			/* background-color: #e39f3d; */
+			color: #cca25d;
+			/* border-color: #cca25d; */
+			/* background-color: #cca25d; */
 		}
 	/* all past nodes: end */
 
@@ -753,7 +753,7 @@ label.deco-input {
 	}
 
 	.f-list.fund-net-worth-trend-chart-legend > li.line-color-1 .legend-symbol {
-		background-color: #e39f3d;
+		background-color: #cca25d;
 	}
 	.f-list.fund-net-worth-trend-chart-legend > li.line-color-2 .legend-symbol {
 		background-color: #ff6600;
@@ -763,7 +763,7 @@ label.deco-input {
 .filters {}
 	.filters .filter.current,
 	.filters .filters-label {
-		color: #e39f3d;
+		color: #cca25d;
 	}
 
 
@@ -781,14 +781,14 @@ label.deco-input {
 	}
 	.carousel-nav button:hover::before {
 		opacity: 1;
-		background-color: #e39f3d;
+		background-color: #cca25d;
 	}
 	/* .carousel-nav button.swiper-pagination-bullet-active:hover::before, */
 	.carousel-nav button.swiper-pagination-bullet-active::before,
 	/* .carousel-nav button.current:hover::before, */
 	.carousel-nav button.current::before {
 		opacity: 1;
-		background-color: #e39f3d;
+		background-color: #cca25d;
 	}
 
 
@@ -902,7 +902,7 @@ dl.tickets-list {
 	}
 
 	.row.input-field input:focus ~ .input-tip.default {
-		color: #e39f3d;
+		color: #cca25d;
 	}
 	.row.input-field.input-image-vcode .right {
 		background-color: #e5e5e5;
@@ -998,7 +998,7 @@ dl.tickets-list {
 	}
     .product-caption-block sub.marker.marker-ke-zhuan-rang,
                               .marker.marker-ke-zhuan-rang { 
-		color: #e39f3d;
+		color: #cca25d;
 	}
     .product-caption-block sub.marker.marker-ke-yong-quan,
                               .marker.marker-ke-yong-quan { 
@@ -1045,13 +1045,13 @@ dl.tickets-list {
 		}
 		ul.f-list.filters.filter-type-regular > li.filter.promoted > .label {
 			color: white;
-			background-color: #e39f3d;
+			background-color: #cca25d;
 		}
 
 
 .ruler > .f-list .ruler-scale-chief         > .label.current,
 .ruler > .f-list .ruler-scale-chief.current > .label {
-	color: #e39f3d;
+	color: #cca25d;
 }
 
 
@@ -1077,7 +1077,7 @@ dl.tickets-list {
 	.menu.layout-vert > .menu-item.current-parent     > .label,
 	.menu.layout-vert > .menu-item.current        > a > .label,
 	.menu.layout-vert > .menu-item.current            > .label {
-		color: #e39f3d;
+		color: #cca25d;
 	}
 
 	.menu.layout-vert > .menu-item:hover,
@@ -1193,16 +1193,16 @@ dl.tickets-list {
 		}
 
 	.tab-list > .current-item-hint {
-		background-color: #e39f3d;
+		background-color: #cca25d;
 	}
 
 	.tab-list > li.current {
-		color: #e39f3d;
+		color: #cca25d;
 		background-color: white;
 	}
 
 	.tab-panel-set.tab-style-buttons .tab-list > li {
-		border-color: #e39f3d;
+		border-color: #cca25d;
 	}
 
 
@@ -1233,8 +1233,8 @@ dl.tickets-list {
 .chart-block {
 	}
 	.chart-block .echart-tooltip {
-		background-color: rgba(255, 177, 70, 0.8);
-		box-shadow: 0 0 7px rgba(11, 22, 41, 0.3);
+		background-color: #cca25d;
+		box-shadow: 0 0 7px rgba(133, 77, 22, 0.33);
 	}
 	.chart-block .echart-tooltip .f-list .label,
 	.chart-block .echart-tooltip .f-list .value {
@@ -1281,11 +1281,11 @@ dl.tickets-list {
 		background-image: url(../../images/_common/page-header-bg-extended-small-dtfunds.jpg);
 	}
 	.page.has-header-bg::after {
-		background-image: linear-gradient(to bottom, #e39f3d 14rem, #f1f1f1 26rem);
+		background-image: linear-gradient(to bottom, rgba(204, 162, 93, 0) 14rem, #f1f1f1 26rem);
 	}
 	.page-header .search-block,
 	.page-header {
-		background-color: #e39f3d;
+		background-color: #cca25d;
 	}
 	.page-header .row *,
 	.page-header .row,
@@ -1306,7 +1306,7 @@ dl.tickets-list {
 	.page-footer .row.buttons-in-single-line.columns.button-simple-style .col [role="button"]:active,
 	.page-footer .row.buttons-in-single-line.columns.button-simple-style .col button:active {
 		color: white;
-		background-color: #e39f3d;
+		background-color: #cca25d;
 	}
 
 	.page.bg-white.has-header-bg .page-body > .content-with-solid-bg,
@@ -1319,7 +1319,7 @@ dl.tickets-list {
 
 	.page::before,
 	.page.has-header-bg .page-header {
-		background-color: #e39f3d;
+		background-color: #cca25d;
 	}
 
 
@@ -1354,10 +1354,10 @@ dl.tickets-list {
 .search-result-records-panel {
 	}
 	.search-result .icon.favorite-entity-icon {
-		color: #e39f3d;
+		color: #cca25d;
 	}
 	.search-result em {
-		color: #e39f3d;
+		color: #cca25d;
 	}
 	.search-result {
 		border-color: #f1f1f1;
