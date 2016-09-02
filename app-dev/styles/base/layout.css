@@ -3011,10 +3011,29 @@ article.message {
 			height: 20rem;
 		}
 	}
+	/* .chart-block div:last-child::after {
+		content: '';
+		width: 1px;
+		height: 1px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		background-color: red;
+	} */
+
 	.chart-block .echart-tooltip {
+		position: absolute;
+		left: 0;
+		top: 0;
 		margin: 0;
 		padding: 0.25rem 0.5rem;
 		border-radius: 0.2rem;
+		-webkit-transform: translate(-50%, -100%) translate(0.5px, 0);
+		        transform: translate(-50%, -100%) translate(0.5px, 0);
+	}
+	.chart-block .echart-tooltip.has-border-triangle {
+		-webkit-transform: translate(-50%, -100%) translate(0.5px, -5px);
+		        transform: translate(-50%, -100%) translate(0.5px, -5px);
 	}
 	.chart-block .echart-tooltip .f-list .label,
 	.chart-block .echart-tooltip .f-list .value {

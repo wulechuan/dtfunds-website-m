@@ -42,13 +42,17 @@ $(function () {
 
 	var eChartFundJinShiBaoRootElement = $('.chart-block')[0];
 	var eChartFundJinShiBao = createEChartsForFundJinShiBao(eChartFundJinShiBaoRootElement);
+	var eChartFinalOptions;
 	updateChart();
 
 
 
 	function updateChart() {
+		var theChart = eChartFundJinShiBao;
 		var data = _generateFakeData(13, 'tradingDay', 'unitNV', 0.125, 2.345);
-		updateEChartsForFundJinShiBao(eChartFundJinShiBao, data);
+		updateEChartsForFundJinShiBao(theChart, data);
+		eChartFinalOptions = theChart.getOption();
+		C.l(eChartFinalOptions);
 	}
 
 	function chartToolTipFormatterForFundJinShiBao(parameters) {
@@ -81,7 +85,7 @@ $(function () {
 			corssHair: '#ff6600',
 			axesLabels: '#cccccc',
 			axesLines: '#f1f1f1',
-			graph: '#e39f3d'
+			graph: '#cca25d'
 		};
 
 		var axesLabelsFont = {
@@ -92,7 +96,7 @@ $(function () {
 		var eChartOptions = {
 			tooltip: {
 				trigger: 'axis',
-				alwaysShowContent: false,
+				alwaysShowContent: true,
 				// axisPointer: {
 				//     type: 'shadow'
 				// 	type: 'cross',
@@ -103,6 +107,33 @@ $(function () {
 				// 	}
 				// },
 				formatter: chartToolTipFormatterForFundJinShiBao,
+				// position: 'top',
+				position: function (touchPoint, params, dom, rect) {
+					var _O = eChartFinalOptions;
+					var value = params[0].value;
+					var canvasWidth = eChartFundJinShiBao.getWidth();
+					var canvasHeight = eChartFundJinShiBao.getHeight();
+					var visibleSamplesCount = _O.xAxis[0].data.length;
+					var xGapsCount = visibleSamplesCount - 1;
+
+					var _grid = _O.grid[0];
+					var graphMarginL = _grid.left;
+					var graphMarginR = _grid.right;
+					var graphMarginT = _grid.top;
+					var graphMarginB = _grid.bottom;
+
+					var graphWidth  = canvasWidth  - graphMarginL - graphMarginR;
+					var graphHeight = canvasHeight - graphMarginT - graphMarginB;
+
+					C.l(graphWidth, graphHeight, xGapsCount);
+
+					var yAxisMaxValue = 2.5;
+
+					var x = graphWidth / xGapsCount * params[0].dataIndex;
+					var y = graphHeight * (yAxisMaxValue - value) / yAxisMaxValue + 10;
+					C.l(params[0].dataIndex, params[0].value, y);
+					return [x, y];
+				},
 				backgroundColor: 'transparent',
 				padding: 0
 			},
@@ -199,7 +230,6 @@ $(function () {
 				}
 			]
 		};
-
 
 		echart.setOption(eChartOptions);
 
