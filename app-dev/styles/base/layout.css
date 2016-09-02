@@ -3011,15 +3011,25 @@ article.message {
 			height: 20rem;
 		}
 	}
-	/* .chart-block div:last-child::after {
+	.chart-block div:last-child::before,
+	.chart-block div:last-child::after {
 		content: '';
-		width: 1px;
-		height: 1px;
 		position: absolute;
-		left: 0;
-		right: 0;
 		background-color: red;
-	} */
+		z-index: 2;
+	}
+	.chart-block div:last-child::before {
+		width: 2px;
+		height: 10px;
+		left: -1px;
+		top: -10px;
+	}
+	.chart-block div:last-child::after {
+		width: 10px;
+		height: 1px;
+		left: -5px;
+		top: 0px;
+	}
 
 	.chart-block .echart-tooltip {
 		position: absolute;
@@ -3034,6 +3044,12 @@ article.message {
 	.chart-block .echart-tooltip.has-border-triangle {
 		-webkit-transform: translate(-50%, -100%) translate(0.5px, -5px);
 		        transform: translate(-50%, -100%) translate(0.5px, -5px);
+	}
+	.chart-block .echart-tooltip.testing {
+		width: 0;
+		height: 0;
+		padding: 0;
+		overflow: hidden;
 	}
 	.chart-block .echart-tooltip .f-list .label,
 	.chart-block .echart-tooltip .f-list .value {

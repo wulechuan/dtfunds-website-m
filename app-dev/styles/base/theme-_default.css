@@ -1234,7 +1234,7 @@ dl.tickets-list {
 	}
 	.chart-block .echart-tooltip {
 		background-color: #cca25d;
-		box-shadow: 0 0 7px rgba(44, 36, 11, 0.3);
+		box-shadow: 0 0 7px rgba(133, 77, 22, 0.33);
 	}
 	.chart-block .echart-tooltip .f-list .label,
 	.chart-block .echart-tooltip .f-list .value {
