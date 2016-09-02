@@ -3011,7 +3011,15 @@ article.message {
 			height: 20rem;
 		}
 	}
-	.chart-block div:last-child::before,
+
+	.chart-block div:last-child {
+		width: 0;
+		height: 0;
+		background-color: red!important;
+		border-radius: 0!important;
+		overflow: visible!important;
+	}
+	/* .chart-block div:last-child::before,
 	.chart-block div:last-child::after {
 		content: '';
 		position: absolute;
@@ -3029,7 +3037,7 @@ article.message {
 		height: 1px;
 		left: -5px;
 		top: 0px;
-	}
+	} */
 
 	.chart-block .echart-tooltip {
 		position: absolute;
@@ -3054,7 +3062,6 @@ article.message {
 	.chart-block .echart-tooltip .f-list .label,
 	.chart-block .echart-tooltip .f-list .value {
 		display: inline-block;
-		/* vertical-align: middle; */
 		font-size: 0.6rem;
 		line-height: 1.2;
 	}

@@ -74,19 +74,8 @@ $(function () {
 	];
 
 
-	var wlc = window.webLogicControls;
-	var app = window.taijs.app;
-
-
 	var eChartFundJinShiBaoRootElement = $('.chart-block')[0];
 	var eChartFundJinShiBao = createEChartsForFundJinShiBao(eChartFundJinShiBaoRootElement);
-
-
-	var eChartTestingStatus = {
-		finalOptions: undefined,
-		isTesting: false,
-		results: []
-	};
 
 
 	updateChart(eChartFundJinShiBao);
@@ -98,25 +87,23 @@ $(function () {
 	}
 
 	function measureChartGrid(theChart) {
-		var testingConfiguration = evaluateTestingConfiguration(theChart);
-		var efo = testingConfiguration.eChartFinalOptions;
+		var testingConfiguration = _evaluateTestingConfiguration(theChart);
 		var eChartRootElement = theChart.getDom();
-		C.l(testingConfiguration);
+		var measurementRecords = [];
 
-		prepareForTesting(theChart);
+		var eChartMeasurementResults = {};
 
-		eChartTestingStatus.finalOptions = efo;
-		eChartTestingStatus.isTesting = true;
+		_prepareForTesting(theChart);
 
-			testOnce(
-				0,
-				theChart,
-				eChartRootElement,
-				testingConfiguration.dataIndexA,
-				testingConfiguration.dataValueA
-			);
+		_testOnce(
+			0,
+			theChart,
+			eChartRootElement,
+			testingConfiguration.dataIndexA,
+			testingConfiguration.dataValueA
+		);
 		setTimeout(function () {
-			testOnce(
+			_testOnce(
 				1,
 				theChart,
 				eChartRootElement,
@@ -124,13 +111,11 @@ $(function () {
 				testingConfiguration.dataValueB
 			);
 
-			setTimeout(function () {
-			onAllTestsEnd();
-			}, 1000);
-		}, 2000);
+			_onAllTestsEnd(theChart);
+		}, 100);
 
 
-		function evaluateTestingConfiguration(theChart) {
+		function _evaluateTestingConfiguration(theChart) {
 			var efo = theChart.getOption();
 
 			var data = efo.series[0].data;
@@ -157,7 +142,7 @@ $(function () {
 			// C.l(dataIndexA, dataIndexB, dataValueA, dataValueB);
 
 			return {
-				eChartFinalOptions: efo,
+				// eChartFinalOptions: efo,
 				dataIndexA: dataIndexA,
 				dataIndexB: dataIndexB,
 				dataValueA: dataValueA,
@@ -165,19 +150,28 @@ $(function () {
 			};
 		}
 
-		function prepareForTesting(theChart) {
+		function _prepareForTesting(theChart) {
 			theChart.setOption({
 				tooltip: {
 					trigger: 'item',
 					position: 'top',
-					formatter: function (p) {
-						return chartToolTipFormatterForFundJinShiBao(p, true);
-					}
+					formatter: _chartToolTipFormatterForFundJinShiBaoTesting
 				}
 			});
 		}
+		function _onAllTestsEnd(theChart) {
+			theChart.setOption({
+				tooltip: {
+					trigger: 'axis',
+					position: _chartToolTipPositionEvaluatorWrapper,
+					formatter: _chartToolTipFormatterForFundJinShiBao
+				}
+			});
 
-		function testOnce(testIndex, theChart, eChartRootElement, dataIndex, dataValue) {
+			_calculateMeasurements(theChart, measurementRecords[0], measurementRecords[1]);
+		}
+
+		function _testOnce(testIndex, theChart, eChartRootElement, dataIndex, dataValue) {
 			theChart.dispatchAction({
 				type: 'showTip',
 				seriesIndex: 0,
@@ -185,18 +179,61 @@ $(function () {
 			});
 
 			var $toolTipRoot = $(eChartRootElement).find('.echart-tooltip').parent();
+			var toolTipRoot = $toolTipRoot[0];
+			toolTipRoot.style.transition = 'none';
 
-			C.l('test', testIndex, '\t\tdata[', dataIndex, ']:', dataValue, $toolTipRoot);
+			var offset = $toolTipRoot.offset();
+
+			var resultRecord = {
+				dataIndex: dataIndex,
+				dataValue: dataValue,
+				toolTipOffsetX: offset.left,
+				toolTipOffsetY: offset.top
+			};
+
+			measurementRecords[testIndex] = resultRecord;
+
+			// C.l('test', testIndex, resultRecord);
 		}
 
-		function onAllTestsEnd() {
-			theChart.setOption({
-				tooltip: {
-					trigger: efo.tooltip.trigger,
-					position: chartToolTipPositionEvaluator,
-					formatter: chartToolTipFormatterForFundJinShiBao
-				}
-			});
+		function _calculateMeasurements(theChart, r1, r2) {
+			var eChartDomOffset = $(eChartRootElement).offset();
+
+			// C.l(r1.toolTipOffsetX, r1.toolTipOffsetY, r2.dataIndex - r1.dataIndex);
+			// C.l(r2.toolTipOffsetX, r2.toolTipOffsetY, r2.dataValue - r1.dataValue);
+
+			var pixelToDataIndexRatio = (r2.toolTipOffsetX - r1.toolTipOffsetX) / (r2.dataIndex - r1.dataIndex);
+			var pixelToDataValueRatio = (r2.toolTipOffsetY - r1.toolTipOffsetY) / (r2.dataValue - r1.dataValue);
+
+			eChartMeasurementResults.refDataIndex = r1.dataIndex;
+			eChartMeasurementResults.refDataValue = r1.dataValue;
+			eChartMeasurementResults.refX = r1.toolTipOffsetX - eChartDomOffset.left;
+			eChartMeasurementResults.refY = r1.toolTipOffsetY - eChartDomOffset.top;
+			eChartMeasurementResults.pixelToDataIndexRatio = pixelToDataIndexRatio;
+			eChartMeasurementResults.pixelToDataValueRatio = pixelToDataValueRatio;
+			// C.l(eChartMeasurementResults);
+		}
+
+		function _chartToolTipPositionEvaluatorWrapper() {
+			return chartToolTipPositionEvaluator.apply(eChartMeasurementResults, arguments);
+		}
+		function chartToolTipPositionEvaluator(touchPoint, params) {
+			var _M = this;
+
+			var chartNode = params[0];
+			var dataIndex = chartNode.dataIndex;
+			var dataValue = parseFloat(chartNode.value);
+
+			var x = _M.refX + (dataIndex - _M.refDataIndex) * _M.pixelToDataIndexRatio;
+			var y = _M.refY + (dataValue - _M.refDataValue) * _M.pixelToDataValueRatio;
+
+			return [x, y];
+		}
+		function _chartToolTipFormatterForFundJinShiBaoTesting() {
+			return generateEChartToolTip.apply({ isTesting: true }, arguments);
+		}
+		function _chartToolTipFormatterForFundJinShiBao() {
+			return generateEChartToolTip.apply({ isTesting: false }, arguments);
 		}
 	}
 
@@ -343,7 +380,7 @@ $(function () {
 
 		for (var i = 0; i < data.length; i++) {
 			xAxisLabels[i] = data[i].tradingDay.slice(5);
-			yData[i] = data[i].unitNV.toFixed(2);
+			yData[i] = data[i].unitNV;
 		}
 
 		var eChartOptions = {
@@ -357,7 +394,8 @@ $(function () {
 
 		echart.setOption(eChartOptions);
 	}
-	function chartToolTipFormatterForFundJinShiBao(parameters, isTesting) {
+	function generateEChartToolTip(parameters) {
+		// C.t('isTesting?', this.isTesting);
 		var _o = parameters;
 		if (Array.isArray(_o)) _o = _o[0];
 
@@ -367,48 +405,15 @@ $(function () {
 				'has-border-triangle ',
 				'border-triangle-at-bottom ',
 				'border-triangle-size-small ',
-				!!isTesting ? 'testing ' : '',
+				this.isTesting ? 'testing ' : '',
 				'">',
 				'<ul class="f-list">',
 					'<li>',
 						// '<span class="label">'+label+' </span>',
-						'<span class="value">'+_o.value+'</span>',
+						'<span class="value">'+_o.value.toFixed(3)+'</span>',
 					'</li>',
 				'</ul>',
 			'</article>'
 		].join('');
-	}
-	function chartToolTipPositionEvaluator(touchPoint, params, dom, rect) {
-		var _O = eChartTestingStatus.finalOptions;
-		var dataIndex = params[0].dataIndex;
-		var dataValue = parseFloat(params[0].value);
-		var canvasWidth = eChartFundJinShiBao.getWidth();
-		var canvasHeight = eChartFundJinShiBao.getHeight();
-		var visibleSamplesCount = _O.xAxis[0].data.length;
-		var axisXLabelHeight = 20;
-		var axisYLabelWidth = 25;
-		var axisYValueMax = 2.5;
-		var axisYValueMin = 0;
-
-
-		var tooltipYOffset = -3;
-
-
-		var _grid = _O.grid[0];
-		var graphMarginL = _grid.left + axisYLabelWidth;
-		var graphMarginR = _grid.right;
-		var graphMarginT = _grid.top;
-		var graphMarginB = _grid.bottom + axisXLabelHeight;
-
-		var graphWidth  = canvasWidth  - graphMarginL - graphMarginR;
-		var graphHeight = canvasHeight - graphMarginT - graphMarginB;
-
-		var xGapsCount = visibleSamplesCount - 1;
-
-		var x = graphWidth / xGapsCount * dataIndex + graphMarginL;
-		var y = graphHeight * (axisYValueMax - dataValue) / (axisYValueMax - axisYValueMin) + graphMarginT + tooltipYOffset;
-
-		C.l(graphWidth, graphHeight, xGapsCount, dataIndex, dataValue, y);
-		return [x, y];
 	}
 });
