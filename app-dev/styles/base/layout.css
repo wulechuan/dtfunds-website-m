@@ -2470,6 +2470,7 @@ article.message {
 	.row.caption-bar {
 		}
 		.row.caption-bar .icon {
+			margin-top: 0.1rem;
 			margin-left: 0;
 			margin-right: 0.25rem;
 		}
