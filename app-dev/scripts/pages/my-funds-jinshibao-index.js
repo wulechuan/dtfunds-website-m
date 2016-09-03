@@ -169,6 +169,7 @@ $(function () {
 			});
 
 			_calculateMeasurements(theChart, measurementRecords[0], measurementRecords[1]);
+			toolTipRoot.style.transition = '';
 		}
 
 		function _testOnce(testIndex, theChart, eChartRootElement, dataIndex, dataValue) {
@@ -179,6 +180,7 @@ $(function () {
 			});
 
 			var $toolTipRoot = $(eChartRootElement).find('.echart-tooltip').parent();
+			$toolTipRoot.addClass('content-position-absolute');
 			var toolTipRoot = $toolTipRoot[0];
 			toolTipRoot.style.transition = 'none';
 
