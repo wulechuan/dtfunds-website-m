@@ -167,7 +167,7 @@ input {
 	a[role="button"]:hover,
 	[role="button"]:hover,
 	button:hover {
-		background-color: #f5aa55;
+		background-color: #f9c478;
 	}
 
 	input[type="button"]:disabled:hover,
@@ -406,7 +406,7 @@ input {
 		}
 		.pagination [role="button"].current:hover,
 		.pagination button.current:hover {
-			background-color: #f5aa55;
+			background-color: #f9c478;
 		}
 
 	a[role="button"]:active,

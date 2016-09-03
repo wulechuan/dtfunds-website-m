@@ -3013,11 +3013,12 @@ article.message {
 	}
 
 	.chart-block div:last-child {
-		width: 0;
-		height: 0;
-		background-color: red!important;
 		border-radius: 0!important;
 		overflow: visible!important;
+	}
+	.chart-block div.content-position-absolute {
+		width: 0;
+		height: 0;
 	}
 	/* .chart-block div:last-child::before,
 	.chart-block div:last-child::after {
@@ -3040,14 +3041,16 @@ article.message {
 	} */
 
 	.chart-block .echart-tooltip {
-		position: absolute;
-		left: 0;
-		top: 0;
 		margin: 0;
 		padding: 0.25rem 0.5rem;
 		border-radius: 0.2rem;
-		-webkit-transform: translate(-50%, -100%) translate(0.5px, 0);
-		        transform: translate(-50%, -100%) translate(0.5px, 0);
+		/* -webkit-transform: translate(-50%, -100%) translate(0.5px, 0);
+		        transform: translate(-50%, -100%) translate(0.5px, 0); */
+	}
+	.chart-block div.content-position-absolute .echart-tooltip {
+		position: absolute;
+		left: 0;
+		top: 0;
 	}
 	.chart-block .echart-tooltip.has-border-triangle {
 		-webkit-transform: translate(-50%, -100%) translate(0.5px, -5px);
