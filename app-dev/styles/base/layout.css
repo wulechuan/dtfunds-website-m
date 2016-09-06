@@ -2393,16 +2393,16 @@ article.message {
 			line-height: 1.0rem;
 			}
 			.row.input-field input:focus::-webkit-input-placeholder { /* WebKit browsers */
-				opacity: 0.1;
+				opacity: 0.6;
 			}
 			.row.input-field input:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
-				opacity: 0.1;
+				opacity: 0.6;
 			}
 			.row.input-field input:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-				opacity: 0.1;
+				opacity: 0.6;
 			}
 			.row.input-field input:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
-				opacity: 0.1;
+				opacity: 0.6;
 			}
 
 

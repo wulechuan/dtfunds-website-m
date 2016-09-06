@@ -354,9 +354,9 @@ gulp.task('html', ['html-inject-snippets'], () => {
     //   })
     // )
     .pipe(htmlmin({
-      preserveLineBreaks: true,
+      // preserveLineBreaks: true,
       removeComments: true,
-      // collapseWhitespace: true,
+      collapseWhitespace: true,
       collapseBooleanAttributes: true,
       removeAttributeQuotes: false,
       removeRedundantAttributes: true,
