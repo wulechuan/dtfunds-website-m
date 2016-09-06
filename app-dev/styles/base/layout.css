@@ -168,10 +168,10 @@ button.add-entity::before,
 	font-weight: normal;
 	font-size: 0.65rem
 	}
-	.tip.tip-has-label {
+	.tip.tip-hung {
 		padding-left: 1.8rem;
 	}
-	.tip.tip-has-label .label {
+	.tip.tip-hung .label {
 		position: absolute;
 		left: 0.8rem;
 	}

@@ -112,6 +112,12 @@ em {
 		.tip {
 			color: #999;
 		}
+		.tip.theme-2 {
+			color: #666;
+		}
+		.tip.theme-2 .label {
+			color: #999;
+		}
 
 
 .color-inverted {
