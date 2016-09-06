@@ -3834,6 +3834,11 @@ article.message {
 				width: 33.33%;
 			}
 		}
+		@media only screen and (max-width: 385px) { /* iPhone 4/4S/5/5S/SE/6 */
+			ul.f-list.filters.filter-type-regular.filters-have-long-label > li.filter {
+				width: 50%;
+			}
+		}
 
 		ul.f-list.filters.filter-type-regular > li.filter > .label {
 			display: block;
@@ -3841,6 +3846,7 @@ article.message {
 			border-radius: 1000px;
 			padding: 0.2rem 0.6rem;
 			margin-right: 0.5rem;
+			cursor: pointer;
 		}
 
 
