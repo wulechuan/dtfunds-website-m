@@ -169,7 +169,8 @@ $(function () {
 			});
 
 			_calculateMeasurements(theChart, measurementRecords[1], measurementRecords[0]);
-			toolTipRoot.style.transition = '';
+			var toolTipRoot = $(eChartRootElement).find('.echart-tooltip').parent()[0];
+			if (toolTipRoot) toolTipRoot.style.transition = '';
 		}
 
 		function _testOnce(testIndex, theChart, eChartRootElement, dataIndex, dataValue) {
