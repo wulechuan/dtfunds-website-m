@@ -286,6 +286,9 @@ article.message {
 	.empty-content-hint.funds-to-chargeback:after {
 		content: '暂无可撤单基金';
 	}
+	.empty-content-hint.jinshibao-trading-records:after {
+		content: '暂无交易记录';
+	}
 
 
 .input-tip {
@@ -3240,6 +3243,18 @@ article.message {
 	}
 
 
+.row.jinshibao-trading-record {
+	}
+
+	.row.jinshibao-trading-record .left {
+		width: calc(45% + 1.5rem);
+	}
+
+	.row.jinshibao-trading-record .right {
+		width: calc(55% + 1rem);
+	}
+
+
 .f-block { /* function-block */
 	font-size: 0.7rem;
 	font-weight: normal;
@@ -3392,6 +3407,7 @@ article.message {
 
 
 	.f-block .icon-of-bank {
+		position: relative;
 		margin: -2px 0.25rem -2px 0;
 		width: 0.8rem;
 		height: 0.8rem;
