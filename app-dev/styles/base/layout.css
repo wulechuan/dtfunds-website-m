@@ -3688,7 +3688,7 @@ article.message {
 		vertical-align: top;
 	}
 	.f-block.fund-entity-for-sale .row.product-title .involved-bank .icon-of-bank::before {
-		margin: -3px 0 0 -4px;
+		margin: -1px 0 0 -4px;
 		-webkit-transform: scale(0.75, 0.75);
 		        transform: scale(0.75, 0.75);
 	}
