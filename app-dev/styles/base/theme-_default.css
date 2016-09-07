@@ -112,6 +112,12 @@ em {
 		.tip {
 			color: #999;
 		}
+		.tip.theme-2 {
+			color: #666;
+		}
+		.tip.theme-2 .label {
+			color: #999;
+		}
 
 
 .color-inverted {
@@ -242,7 +248,7 @@ input {
 	a[role="button"].bg-transparent:hover,
 	[role="button"].bg-transparent:hover,
 	button.bg-transparent:hover {
-		background-color: #e5f1ff;
+		background-color: #fdf4e5;
 	}
 
 	.color-inverted input[type="reset"].bg-transparent,
@@ -1043,9 +1049,15 @@ dl.tickets-list {
 			color: #333;
 			background-color: #eee;
 		}
+		ul.f-list.filters.filter-type-regular > li.filter > .label:hover {
+			background-color: #fdf4e5;
+		}
 		ul.f-list.filters.filter-type-regular > li.filter.promoted > .label {
 			color: white;
 			background-color: #cca25d;
+		}
+		ul.f-list.filters.filter-type-regular > li.filter.promoted:hover > .label {
+			background-color: #f9c478;
 		}
 
 

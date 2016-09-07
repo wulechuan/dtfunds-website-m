@@ -168,10 +168,10 @@ button.add-entity::before,
 	font-weight: normal;
 	font-size: 0.65rem
 	}
-	.tip.tip-has-label {
+	.tip.tip-hung {
 		padding-left: 1.8rem;
 	}
-	.tip.tip-has-label .label {
+	.tip.tip-hung .label {
 		position: absolute;
 		left: 0.8rem;
 	}
@@ -285,6 +285,9 @@ article.message {
 	}
 	.empty-content-hint.funds-to-chargeback:after {
 		content: '暂无可撤单基金';
+	}
+	.empty-content-hint.jinshibao-trading-records:after {
+		content: '暂无交易记录';
 	}
 
 
@@ -2390,16 +2393,16 @@ article.message {
 			line-height: 1.0rem;
 			}
 			.row.input-field input:focus::-webkit-input-placeholder { /* WebKit browsers */
-				opacity: 0.1;
+				opacity: 0.6;
 			}
 			.row.input-field input:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
-				opacity: 0.1;
+				opacity: 0.6;
 			}
 			.row.input-field input:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-				opacity: 0.1;
+				opacity: 0.6;
 			}
 			.row.input-field input:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
-				opacity: 0.1;
+				opacity: 0.6;
 			}
 
 
@@ -3392,6 +3395,7 @@ article.message {
 
 
 	.f-block .icon-of-bank {
+		position: relative;
 		margin: -2px 0.25rem -2px 0;
 		width: 0.8rem;
 		height: 0.8rem;
@@ -3684,7 +3688,7 @@ article.message {
 		vertical-align: top;
 	}
 	.f-block.fund-entity-for-sale .row.product-title .involved-bank .icon-of-bank::before {
-		margin: -3px 0 0 -4px;
+		margin: -1px 0 0 -4px;
 		-webkit-transform: scale(0.75, 0.75);
 		        transform: scale(0.75, 0.75);
 	}
@@ -3700,6 +3704,45 @@ article.message {
 	}
 	.f-block.fund-entity-for-sale .row.product-abstract .entity-info > .call-to-action {
 		top: 0;
+	}
+
+
+.row.jinshibao-trading-record {
+	padding-bottom: 0.2rem;
+	}
+
+	.f-block-body .row.jinshibao-trading-record .left {
+		margin-top: -0.2rem;
+		margin-bottom: -0.2rem;
+		width: calc(45% + 1.5rem);
+		line-height: 1rem;
+	}
+
+	.f-block-body .row.jinshibao-trading-record .right {
+		margin-top: -0.2rem;
+		margin-bottom: -0.2rem;
+		width: calc(55% + 1rem);
+		line-height: 1rem;
+	}
+
+	.f-block-body .row.jinshibao-trading-record .right h3,
+	.f-block-body .row.jinshibao-trading-record .left  h3 {
+		font-weight: 400;
+		font-size: 0.8rem;
+	}
+
+	.f-block-body .row.jinshibao-trading-record .right p,
+	.f-block-body .row.jinshibao-trading-record .left  p {
+		margin: 0.2rem;
+		font-size: 0.7rem;
+	}
+
+	.f-block-body .row.jinshibao-trading-record .right p {
+		margin-right: -0.05rem;
+	}
+
+	.f-block-body .row.jinshibao-trading-record .icon-of-bank {
+		margin: -0.35rem 0.2rem 0 0;
 	}
 
 
@@ -3834,6 +3877,11 @@ article.message {
 				width: 33.33%;
 			}
 		}
+		@media only screen and (max-width: 385px) { /* iPhone 4/4S/5/5S/SE/6 */
+			ul.f-list.filters.filter-type-regular.filters-have-long-label > li.filter {
+				width: 50%;
+			}
+		}
 
 		ul.f-list.filters.filter-type-regular > li.filter > .label {
 			display: block;
@@ -3841,6 +3889,7 @@ article.message {
 			border-radius: 1000px;
 			padding: 0.2rem 0.6rem;
 			margin-right: 0.5rem;
+			cursor: pointer;
 		}
 
 

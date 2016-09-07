@@ -81,7 +81,7 @@ $(function () {
 	updateChart(eChartFundJinShiBao);
 
 	function updateChart(theChart) {
-		// var fakeData = _generateFakeData(30, 'tradingDay', 'unitNV', 0.125, 2.345);
+		var fakeData = _generateFakeData(30, 'tradingDay', 'unitNV', 0.125, 2.345);
 		updateEChartsForFundJinShiBao(theChart, fakeData);
 		measureChartGrid(theChart);
 	}
@@ -99,16 +99,16 @@ $(function () {
 			0,
 			theChart,
 			eChartRootElement,
-			testingConfiguration.dataIndexA,
-			testingConfiguration.dataValueA
+			testingConfiguration.dataIndexB,
+			testingConfiguration.dataValueB
 		);
 		setTimeout(function () {
 			_testOnce(
 				1,
 				theChart,
 				eChartRootElement,
-				testingConfiguration.dataIndexB,
-				testingConfiguration.dataValueB
+				testingConfiguration.dataIndexA,
+				testingConfiguration.dataValueA
 			);
 
 			_onAllTestsEnd(theChart);
@@ -120,12 +120,12 @@ $(function () {
 
 			var data = efo.series[0].data;
 			
-			var dataIndexA = 0;
-			var dataValueA = parseFloat(data[0]);
+			var dataIndexA = data.length - 1;
+			var dataValueA = parseFloat(data[dataIndexA]);
 			var dataIndexB = 0;
 			var dataIndexMaxDiff = 0;
 			var maxDifferenceSoFar = 0;
-			for (var i = 1; i < data.length; i++) {
+			for (var i = dataIndexA; i >= 0; i--) {
 				var diff = Math.abs(parseFloat(data[i]) - dataValueA);
 				if (diff >= 0.1) {
 					dataIndexB = i;
@@ -168,8 +168,9 @@ $(function () {
 				}
 			});
 
-			_calculateMeasurements(theChart, measurementRecords[0], measurementRecords[1]);
-			toolTipRoot.style.transition = '';
+			_calculateMeasurements(theChart, measurementRecords[1], measurementRecords[0]);
+			var toolTipRoot = $(eChartRootElement).find('.echart-tooltip').parent()[0];
+			if (toolTipRoot) toolTipRoot.style.transition = '';
 		}
 
 		function _testOnce(testIndex, theChart, eChartRootElement, dataIndex, dataValue) {
