@@ -262,7 +262,7 @@ gulp.task('html-inject-snippets', ['pre-process-html-snippets'], () => {
     { file: 'module-covering-layer-funds-trading-records-filters.html', name: 'coveryingLayerFundsTradingRecordsFilters:html' },
     { file: 'module-covering-layer-funds-jinshibao-trading-records-filters.html', name: 'coveryingLayerFundsJinShiBaoTradingRecordsFilters:html' },
     { file: 'module-asset-progress-blocks-funds-po.html', name: 'assetProgressBlocksFundsPO:html' },
-    { file: 'module-asset-progress-blocks-funds-jinshibao.html', name: 'assetProgressBlocksFundsJinshibao:html' }
+    { file: 'module-asset-progress-blocks-funds-jinshibao.html', name: 'assetProgressBlocksFundsJinshibao:html' },
     { file: 'module-asset-progress-block-attachments-funds-po.html', name: 'assetProgressBlockAttachmentsFundsPO:html' }
   ];
 
