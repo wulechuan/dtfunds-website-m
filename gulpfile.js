@@ -1,21 +1,30 @@
-var pathSrcRoot          = 'app-dev';
-var pathDistRoot         = 'app-dist1';
-var pathNewDistCacheRoot = 'app-dist-cache';
-var pathTempRoot         = '_temp';
+var pathSrcRoot          = 'app-client/source';
+var pathDistRoot         = 'app-client/build-dev';
+var pathNewDistCacheRoot = 'app-client/_build-cache';
+var pathTempRoot         = 'app-client/_temp';
+var shouldMinifyHTML     = true;
 
 // 文件夹结构：
 //
 // {root}
-//   ├─app-dev       <-- 这是开发源码（Development）文件夹
-//   │  ├─html
-//   │  ├─scripts
-//   │  └─styles
-//   │     └─base    <-- Reset通配定义、网站的基本定义、字体定义的css全放在这里，然后让gulp自动合并成base.min.css。
-//   ├─app-dist      <-- 这是发布（Distribution）文件夹
-//   │  ├─html
-//   │  ├─scripts
-//   │  └─styles
-//   └─node_modules  <-- 这是node插件文件夹，纯粹供node使用，与最终前端产品毫无干系
+//   └─ app-client
+//       ├─ source        <-- 这是开发源码（Development）文件夹
+//       │   ├─ html
+//       │   ├─ scripts
+//       │   └─ styles
+//       │       └─base   <-- Reset通配定义、网站的基本定义、字体定义的css全放在这里，然后让gulp自动合并成base.min.css。
+//       │
+//       ├─build-dev      <-- 这是开发预览文件夹
+//       │  ├─html
+//       │  ├─scripts
+//       │  └─styles
+//       │
+//       ├─build-release  <-- 这是正式发布文件夹
+//       │  ├─html
+//       │  ├─scripts
+//       │  └─styles
+//       │
+//       └─node_modules   <-- 这是node插件文件夹，纯粹供node使用，与最终前端产品毫无干系
 
 
 
@@ -92,10 +101,10 @@ var baseCssGlobs = [
 
 gulp.task('styles-base', ['before-everything'], () => {
   return gulp.src(baseCssGlobs)
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
       .pipe(concat('base.min.css')) // 这些css我要合并成单一文件
       // .pipe(cssmin())
-    .pipe(sourcemaps.write('.'))
+    // .pipe(sourcemaps.write('.'))
 
     .pipe(gulp.dest(pathNewDistCacheRoot+'/styles/base/')) // 将文件写入指定文件夹
   ;
@@ -124,14 +133,14 @@ gulp.task('styles-specific', ['before-everything'], () => {
     ]
       .concat(baseCssGlobsIngored)
   )
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
       // .pipe(concat('main.min.css')) // 这些css我不打算合并
       // .pipe(cssmin())
       .pipe(rename((fullPathName) => {
         fullPathName.basename += '.min';
         return fullPathName;
       }))
-    .pipe(sourcemaps.write('.'))
+    // .pipe(sourcemaps.write('.'))
 
     .pipe(gulp.dest(pathNewDistCacheRoot+'/styles')) // 将文件写入指定文件夹
   ;
@@ -172,14 +181,14 @@ gulp.task('scripts-unglify', ['es-lint'], () => {
     pathSrcRoot+'/scripts/**/*.js',
     '!'+pathSrcRoot+'/scripts/vendors/**/*'
   ])
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
       // .pipe(concat('base.min.js'))
       // .pipe(uglifyJs({preserveComments: 'some'}))
       .pipe(rename((fullPathName) => {
         fullPathName.basename += '.min';
         return fullPathName;
       }))
-    .pipe(sourcemaps.write('.'))
+    // .pipe(sourcemaps.write('.'))
 
     .pipe(gulp.dest(pathNewDistCacheRoot+'/scripts')) // 将文件写入指定文件夹
   ;
@@ -291,73 +300,15 @@ gulp.task('html-inject-snippets', ['pre-process-html-snippets'], () => {
 
 
 gulp.task('html', ['html-inject-snippets'], () => {
-  // function _injectCssClassInto(stringToProcess, desiredTagName, classNamesToInject) {
-  //   var resultString;
-
-  //   var regExp = new RegExp('<'+desiredTagName+'[^>]*');
-
-  //   var beginTag = stringToProcess.match(regExp); // without tail '>'
-  //   // var beginTagPos = stringToProcess.search(regExp);
-
-  //   if (!beginTag) return stringToProcess;
-
-  //   beginTag = beginTag[0];
-
-  //   var hasClassAttribute = false;
-  //   var attributeNameMatch = beginTag.match(/[\"\'\s]class\s*\=\s*[\"\']?/);
-  //   if (!attributeNameMatch) {
-  //     resultString = stringToProcess.replace(beginTag, beginTag+' class="'+classNamesToInject+'"');
-  //   } else {
-  //     var attributeName = attributeNameMatch[0];
-  //     var valuePos = attributeName.length + attributeNameMatch.index;
-  //     var lastChar = beginTag.charAt(valuePos-1);
-  //     var charAfter = beginTag.charAt(valuePos);
-
-  //     var lastCharIsPunc = !!lastChar.match(/[\'\"']/);
-  //     var lastCharIsSpace = !!lastChar.match(/\s/);
-
-  //     hasClassAttribute = !lastCharIsSpace;
-
-  //     var newValueSuffix = '';
-
-  //     if (!hasClassAttribute) {
-
-  //       attributeName = attributeName.replace(/\s+$/, '');
-  //       newValueSuffix = charAfter.match(/[\s>]/) ? '' : ' ';
-  //       resultString = stringToProcess.replace(attributeName, attributeName+'"'+classNamesToInject+'"'+newValueSuffix);
-
-  //     } else if (!lastCharIsPunc) {
-
-  //       var attributePairMatch = beginTag.match(/[\"\'\s]class\s*\=\S+/);
-  //       var attributePair = attributePairMatch[0];
-
-  //       var attributePairResult = attributePair.replace(/([\"\'\s]class\s*\=)/, '$1'+'\"') + ' ' + classNamesToInject + '\"';
-  //       resultString = stringToProcess.replace(attributePair, attributePairResult);
-
-  //     } else {
-
-  //       newValueSuffix = charAfter.match(/[\s\'\"']/) ? '' : ' ';
-  //       resultString = stringToProcess.replace(attributeName, attributeName+classNamesToInject+newValueSuffix);
-
-  //     }
-  //   }
-
-  //   return resultString;
-  // }
-
   return gulp.src([
     pathNewDistCacheRoot+'/**/*.html',
     '!'+pathNewDistCacheRoot+'/html-snippets/*'
   ])
-    // .pipe(
-    //   changeContent((fileContentString) => {
-    //     return _injectCssClassInto(fileContentString, 'html', 'touch-off');
-    //   })
-    // )
     .pipe(htmlmin({
-      // preserveLineBreaks: true,
-      removeComments: true,
-      collapseWhitespace: true,
+      preserveLineBreaks: !shouldMinifyHTML,
+      collapseWhitespace: !!shouldMinifyHTML,
+
+      removeComments: false,
       collapseBooleanAttributes: true,
       removeAttributeQuotes: false,
       removeRedundantAttributes: true,
@@ -366,7 +317,6 @@ gulp.task('html', ['html-inject-snippets'], () => {
       removeStyleLinkTypeAttributes: true,
       // removeOptionalTags: true
     }))
-
     .pipe(logFileSizes({title: '>>>>>>>>  Reporting Files:   HTML', showFiles: false})) // 为了装逼，在命令行窗口中打印一下文件尺寸
     .pipe(gulp.dest(pathNewDistCacheRoot)) // 将文件写入指定文件夹
   ;

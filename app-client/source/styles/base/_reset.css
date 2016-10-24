@@ -21,7 +21,7 @@ time, mark, audio, video {
 a {
 	font-size: inherit;
 }
-input, select, option, button, [role="button"] {
+input, select, option, button, [role="button"], a.button {
     box-sizing: content-box;
     margin: 0.5em;
     padding: 0.5em 1em;
@@ -30,7 +30,6 @@ input, select, option, button, [role="button"] {
 	border-color: black;
 	background-color: transparent;
     line-height: normal;
-    border-style: solid;
 
     display: inline-block;
     vertical-align: top;
@@ -53,12 +52,12 @@ input, select, option {
 	padding-right: 0.5em;
 }
 button, input, select, label,
-button label:active, button label:focus, a[role="button"] label:active, a[role="button"] label:focus, {
+button label:active, button label:focus, a[role="button"] label:active, a[role="button"] label:focus, a.button label:active, a.button label:focus {
     outline: none;
 }
 a, select, option, label[for],
 input[type="submit"], input[type="button"], input[type="reset"], input[type="radio"], input[type="checkbox"],
-button, button label, [role="button"], [role="button"] label {
+button, button label, [role="button"], [role="button"] label, .button, .button label {
     cursor: pointer;
 }
 
