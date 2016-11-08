@@ -2808,9 +2808,10 @@ article.message {
 
 .row.header-bar {
 	width: 100%;
-	min-height: 1.4rem;
+	height: 1.4rem;
 	margin: 0 auto;
 	padding: 0.5rem 0;
+	overflow: hidden;
 	}
 
 	.row.header-bar > nav,
@@ -4595,7 +4596,8 @@ dl.tickets-list {
 		max-width: 768px;
 		}
 
-	.page.has-header-bg {
+	.page.has-header-bg .page-header::after {
+		content: none;
 		}
 		.page.has-header-bg::before { /* page-header patch for iOS Safari momentum scrolling */
 			content: '';
@@ -4633,11 +4635,17 @@ dl.tickets-list {
 			background-color: transparent!important;
 		} */
 
+		.page.has-header-bg .bg-meets-page-header-container .f-block-body {
+			border-color: transparent;
+		}
+		.page.has-header-bg .bg-meets-page-header-container .f-block-body,
+		.page.has-header-bg .bg-meets-page-header-container,
 		.page.has-header-bg .row.bg-meets-page-header-container .hero-content-block,
 		.page.has-header-bg .row.bg-meets-page-header-container {
 			background-color: transparent!important;
 			background-image: none!important;
 		}
+
 		.page.has-header-bg .row.bg-meets-page-header-container .hero-content-block h3 .hero-word {
 			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.16);
 		}
@@ -4662,7 +4670,7 @@ dl.tickets-list {
 		display: block;
 		border-width: 1px 0 0 0;
 		border-style: solid;
-		border-color: transparent;
+		border-color: inherit;
 		margin-bottom: -1px;
 	}
 	.page-header::after {
@@ -4670,7 +4678,7 @@ dl.tickets-list {
 		display: block;
 		border-width: 0 0 1px 0;
 		border-style: solid;
-		border-color: transparent;
+		border-color: inherit;
 		margin-top: -1px;
 	}
 
@@ -4686,6 +4694,7 @@ dl.tickets-list {
 		-webkit-overflow-scrolling: touch;
 
 		z-index: 2;
+		margin-top: -1px;
 		}
 		.page-body.use-content-as-main-container > .content-with-solid-bg {
 			box-sizing: border-box;

@@ -13,17 +13,17 @@
 
 <!-- inject:appFGLayerWrapBegin:html --><!-- endinject -->
 <div data-app-header-title="我的" id="page-my"
-	 class="page has-page-header fixed-page-header"
+	 class="page has-page-header fixed-page-header has-header-bg header-bg-dark"
 	><header class="page-header">
 		<div class="row header-bar">
-			<div class="center"><h1>我的</h1></div>
+			<!--<div class="center"><h1>我的</h1></div>-->
 			<div class="left"  ><button class="nav-back" data-back-target="history"></button></div>
 			<div class="right" ><a role="button" class="nav-home" href="../index.html"></a></div>
 		</div>		
 	</header>
 
 	<div class="page-body">
-		<div class="f-block">
+		<div class="f-block bg-meets-page-header-container snap-top">
 			<div class="f-block-body">
 				<div class="row full-width">
 					<div class="hero-content-block hero-content-block-style-2">
@@ -40,91 +40,97 @@
 						</h3>
 					</div>
 				</div>
-			</div>
-			<div class="row helvetica-digits user-assets-abstract user-assets-abstract-style-2">
-				<ul class="f-list"
-					><li>
-						<span class="label compensate-punctuation">昨日收益(元)</span>
-						<span class="content">
-							<em><span class="value digits digits-with-sign">+12.00</span></em>
-						</span>
-					</li
-					><li>
-						<span class="label compensate-punctuation">累计收益(元)</span>
-						<span class="content">
-							<em><span class="value digits digits-with-sign">+120.00</span></em>
-						</span>
-					</li
-				></ul>
-			</div>
-		</div>
-
-		<div class="f-block">
-			<div class="f-block-body">
-				<a href="my-funds-jinshibao-index.html">
-				<div class="row tall has-lead-icon emphasise-both-sides">
-					<i class="lead-icon icon iconfont icon-money-bag"
-						style="color: #cca25d; font-size: 1.55rem;"></i>
-					<div class="left" >金石宝</div>
-					<div class="right"><span class="value currency">750.00</span>元</div>
+				<div class="row helvetica-digits user-assets-abstract hide-borders">
+					<ul class="f-list"
+						><li>
+							<span class="label compensate-punctuation">昨日收益(元)</span>
+							<span class="content">
+								<em><span class="value digits digits-with-sign">+12.00</span></em>
+							</span>
+						</li
+						><li>
+							<span class="label compensate-punctuation">累计收益(元)</span>
+							<span class="content">
+								<em><span class="value digits digits-with-sign">+120.00</span></em>
+							</span>
+						</li
+					></ul>
 				</div>
-				</a>
-
-				<a href="my-funds-po-index.html">
-				<div class="row tall has-lead-icon emphasise-both-sides">
-					<i class="lead-icon icon iconfont icon-card-with-dollar-sign"
-						style="color: #cca25d;"></i>
-					<div class="left" >公募基金</div>
-					<div class="right"><span class="value currency">1,250.00</span>元</div>
-				</div>
-				</a>
 			</div>
 		</div>
 
-		<div class="f-block">
-			<div class="f-block-body">
-				<!--<a href="my-tickets-index.html">
-				<div class="row tall has-lead-icon emphasise-both-sides">
-					<i class="lead-icon icon iconfont icon-ticket-with-dual-parts"
-						style="color: #cca25d;"></i>
-					<div class="left" >我的卡券</div>
-					<div class="right"><span class="value">7</span>张</div>
+		<div class="content-with-solid-bg">
+			<div class="f-block large-gap snap-top">
+				<div class="f-block-body">
+				<div class="row columns"
+					><div class="col"
+						><a href="fund-jinshibao-trading-sale-confirm.html"
+							role="button" class="simple-look"
+						>买基金</a>
+					</div
+					><hr class="vert"
+					><div class="col"
+						><a href="fund-jinshibao-trading-buy-in-confirm.html"
+							role="button" class="simple-look"
+						>交易记录</a></div
+					></div>
 				</div>
-				</a>-->
+			</div>
 
-				<a href="#">
-				<div class="row tall has-lead-icon emphasise-leftside">
-					<i class="lead-icon icon iconfont icon-gift-box"
-						style="color: #cca25d; font-size: 1.25rem;"></i>
-					<div class="left" >邀请有礼</div>
-					<div class="right">亿元红包无限放送</div>
+			<div class="f-block large-gap">
+				<div class="f-block-body">
+					<a href="my-funds-jinshibao-index.html">
+					<div class="row tall has-lead-icon emphasise-both-sides">
+						<i class="lead-icon icon iconfont icon-money-bag"
+							style="color: #cca25d; font-size: 1.55rem;"></i>
+						<div class="left" >钱包</div>
+						<div class="right"><span class="value currency">2234.00</span>元</div>
+					</div>
+					</a>
 				</div>
-				</a>
+			</div>
 
-				<a href="account-bank-cards-list.html">
-				<div class="row tall has-lead-icon emphasise-both-sides">
-					<i class="lead-icon icon iconfont icon-bank-card"
-						style="color: #cca25d;"></i>
-					<div class="left" >银行卡</div>
-					<div class="right"><span class="value">3</span>张</div>
+			<div class="f-block large-gap">
+				<div class="f-block-body">
+					<a href="my-funds-po-index.html">
+					<div class="row tall has-lead-icon emphasise-both-sides">
+						<i class="lead-icon icon iconfont icon-card-with-dollar-sign"
+							style="color: #cca25d;"></i>
+						<div class="left" >当前持仓</div>
+						<div class="right"><span class="value currency">6,770.00</span>元</div>
+					</div>
+					</a>
 				</div>
-				</a>
+			</div>
 
-				<a href="account-personal-my-favorites.html">
-				<div class="row tall has-lead-icon emphasise-both-sides">
-					<i class="lead-icon icon iconfont icon-star-5-cornered-cute"
-						style="color: #cca25d; font-size: 1.28rem;"></i>
-					<div class="left" >我的收藏</div>
-				</div>
-				</a>
+			<div class="f-block">
+				<div class="f-block-body">
+					<!--<a href="my-tickets-index.html">
+					<div class="row tall has-lead-icon emphasise-both-sides">
+						<i class="lead-icon icon iconfont icon-ticket-with-dual-parts"
+							style="color: #cca25d;"></i>
+						<div class="left" >我的卡券</div>
+						<div class="right"><span class="value">7</span>张</div>
+					</div>
+					</a>-->
 
-				<a href="account-info.html">
-				<div class="row tall has-lead-icon emphasise-both-sides">
-					<i class="lead-icon icon iconfont icon-avatar-in-pie"
-						style="color: #cca25d; font-size: 1.33rem;"></i>
-					<div class="left" >个人信息</div>
+					<a href="#">
+					<div class="row tall has-lead-icon emphasise-leftside">
+						<i class="lead-icon icon iconfont icon-gift-box"
+							style="color: #cca25d; font-size: 1.25rem;"></i>
+						<div class="left" >我的定投</div>
+						<div class="right"><span class="value digits">2</span>个</div>
+					</div>
+					</a>
+
+					<a href="account-personal-my-favorites.html">
+					<div class="row tall has-lead-icon emphasise-both-sides">
+						<i class="lead-icon icon iconfont icon-star-5-cornered-cute"
+							style="color: #cca25d; font-size: 1.28rem;"></i>
+						<div class="left" >我的关注</div>
+					</div>
+					</a>
 				</div>
-				</a>
 			</div>
 		</div>
 

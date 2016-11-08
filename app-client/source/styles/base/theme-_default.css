@@ -62,8 +62,7 @@ a, a:visited {
 
 
 em {
-	/* color: #ff7200; */
-	color: #ff6600;
+	color: #cca25d;
 	}
 	.favorite-entity-icon {
 		color: #ff6600;
@@ -98,7 +97,7 @@ em {
 			color: #0f0!important;
 		}
 		.positive-value {
-			color: #ff6600!important;
+			color: #cca25d!important;
 		}
 		.negative-value {
 			/* color: #2c9b01!important; */
@@ -1288,21 +1287,30 @@ dl.tickets-list {
 	.page {
 		background-color: #f1f1f1;
 	}
+
+	.page.has-header-bg .bg-meets-page-header-container .hero-content-block .subject,
+	.page.has-header-bg .bg-meets-page-header-container .f-block-body,
+	.page.has-header-bg .bg-meets-page-header-container,
+	.page.has-header-bg .row.bg-meets-page-header-container .hero-content-block,
+	.page.has-header-bg .row.bg-meets-page-header-container {
+		color: #999;
+	}
+	
 	.page.has-header-bg::before,
 	.page.has-header-bg .page-header {
-		background-image: url(../../images/_common/page-header-bg-extended-small-dtfunds.jpg);
-	}
-	.page.has-header-bg::after {
-		background-image: linear-gradient(to bottom, rgba(204, 162, 93, 0) 14rem, #f1f1f1 26rem);
+		/*background-image: url(../../images/_common/page-header-bg-extended-small-dtfunds.jpg);*/
 	}
 	.page-header .search-block,
 	.page-header {
-		background-color: #cca25d;
+		/*background-color: #cca25d;*/
+		background-color: #fff;
+		border-color: #dfdfdf;
 	}
 	.page-header .row *,
 	.page-header .row,
 	.page-header {
-		color: white;
+		/*color: white;*/
+		color: #000;
 	}
 	.page-header input {
 		background-color: rgba(255, 255, 255, 0.2);
@@ -1325,14 +1333,17 @@ dl.tickets-list {
 	.page.bg-white {
 		background-color: white;
 	}
-	.page.bg-white.has-header-bg::after {
-		background-image: linear-gradient(to bottom, rgba(62, 90, 215, 0) 14rem, white 26rem);
-	}
 
 	.page::before,
 	.page.has-header-bg .page-header {
 		background-color: #cca25d;
 	}
+	.page.header-bg-dark::before,
+	.page.header-bg-dark.has-header-bg .page-header {
+		color: #fff;
+		background-color: #2f3133;
+	}
+
 
 
 .page-body-stamp {
