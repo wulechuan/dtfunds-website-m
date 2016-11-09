@@ -1296,21 +1296,31 @@ dl.tickets-list {
 		color: #999;
 	}
 	
-	.page.has-header-bg::before,
+	/*.page.has-header-bg::before,
 	.page.has-header-bg .page-header {
-		/*background-image: url(../../images/_common/page-header-bg-extended-small-dtfunds.jpg);*/
-	}
+		background-image: url(../../images/_common/page-header-bg-extended-small-dtfunds.jpg);
+	}*/
 	.page-header .search-block,
 	.page-header {
-		/*background-color: #cca25d;*/
 		background-color: #fff;
 		border-color: #dfdfdf;
 	}
+
 	.page-header .row *,
 	.page-header .row,
 	.page-header {
 		/*color: white;*/
 		color: #000;
+	}
+	.page-header.color-inverted .search-block,
+	.page-header.color-inverted {
+		border-color: #cca25d;
+		background-color: #cca25d;
+	}
+	.page-header.color-inverted .row *,
+	.page-header.color-inverted .row,
+	.page-header.color-inverted {
+		color: white;
 	}
 	.page-header input {
 		background-color: rgba(255, 255, 255, 0.2);

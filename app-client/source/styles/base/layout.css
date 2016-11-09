@@ -4861,32 +4861,6 @@ dl.tickets-list {
 		}
 
 
-.taijs-logo.image {
-	display: block;
-	width: 100px;
-	height: 100px;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	background-image: url(../../images/taijs-brand/taijs-logo-white-bg-transparent-large-cropped.png);
-
-	box-sizing: border-box;
-	padding: 1px; /* prevent block from merging margins with neighbours */
-	}
-
-	.taijs-slogan.image {
-		display: block;
-		width: 100px;
-		height: 100px;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
-		background-image: url(../../images/taijs-brand/taijs-slogan-white-bg-transparent-large-cropped.png);
-		opacity: 0.6;
-
-		box-sizing: border-box;
-		padding: 1px; /* prevent block from merging margins with neighbours */
-	}
 .dtfunds-logo.image {
 	display: block;
 	width: 100px;
@@ -4894,6 +4868,7 @@ dl.tickets-list {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
+	/*background-image: url(../../images/dtfunds-brand/dtfunds-logo-gold-bg-transparent-large-cropped.png);*/
 	background-image: url(../../images/dtfunds-brand/dtfunds-logo-white-bg-transparent-medium-cropped.png);
 
 	box-sizing: border-box;
