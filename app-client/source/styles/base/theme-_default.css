@@ -1317,11 +1317,11 @@ dl.tickets-list {
 		border-color: #cca25d;
 		background-color: #cca25d;
 	}
-	.page-header.color-inverted .row *,
+	/*.page-header.color-inverted .row *,
 	.page-header.color-inverted .row,
 	.page-header.color-inverted {
 		color: white;
-	}
+	}*/
 	.page-header input {
 		background-color: rgba(255, 255, 255, 0.2);
 	}
